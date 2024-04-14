@@ -6,14 +6,16 @@
   box-sizing: border-box;
 }
 
+/* custom properties */
+
 :root {
-  --ff-primary: 'Jersey 25', sans-serif;
-  --ff-secondary: 'Jersey 20', sans-serif;
+  --ff-primary: "Kode Mono", monospace;;
+  --ff-secondary: "Kode Mono", monospace;;
 
-  --fw-reg: 300;
-  --fw-bold: 900;
+  --fw-reg: 400;
+  --fw-bold: 700;
 
-  --clr-light: #fff;
+  --clr-light: #f6f6f6;
   --clr-dark: #323232;
   --clr-accent: #16c0bd;
 
@@ -21,6 +23,9 @@
   --fs-h2: 2.25rem;
   --fs-h3: 1.25rem;
   --fs-body: 1rem;
+
+  --bs: 0.25em 0.25em 0.75em rgb(0,0,0,.25),
+        0.125em 0.125em .25em rgb(0,0,0,.15)
 }
 
 @media (min-width: 800px) {
@@ -35,12 +40,15 @@
 /* general styles */
 
 body {
-  background: var(--clr-light);
-  color: var(--clr-dark);
+  background: var(--clr-dark);
+  color: var(--clr-light);
   margin: 0;
-  font-family: 'Jersey 10', sans-serif;
+  font-family: var(--ff-primary);
   font-size: var(--fs-body);
-  line-height: 1.6rem;
+  font-weight:300;
+  line-height: 1.6;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
 img {
@@ -48,12 +56,32 @@ img {
   max-width: 100%;
 }
 
+strong {font-weight: var(--fw-bold)};
+
+.btn {
+  display:inline-block;
+  padding: .5em 1.5em;
+  background: var(--clr-accent);
+  color: var(--clr-dark);
+  text-decoration: none;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing: 2px;
+  font-weight: var(--fw-bold);
+  font-size: .8rem;
+  transition: transform 200ms ease-in-out;
+}
+
+.btn:hover {
+  transform:scale(1.1)
+}
+
 /* typography */
 
 h1,
 h2,
 h3 {
-  line-height: 1.1rem;
+  line-height: 1.1;
   margin: 0;
 }
 
@@ -69,11 +97,13 @@ h3 {
 
 .section__title {
   margin-bottom: 0.25em;
+  
 }
+
 .section__title-intro {
   font-weight: var(--fw-reg);
 }
-.section__title-intro strong {
+.section__title--intro strong {
   display: block;
 }
 .section__subtitle {
@@ -89,15 +119,31 @@ h3 {
   margin-bottom: 1em
 }
 
+.section__subtitle--intro {
+  display:inline-block;
+ 
+}
+
 /* header */
 
 nav {
   display:none;
 }
 
+/* intro section */
+
 .intro {
   position: relative;
 }
+
+.intro__img {
+  box-shadow: var(--bs)
+}
+
+.section__subtitle--intro {
+  display:inline-block;
+}
+
 
 @media (min-width: 600px) {
   .intro {
@@ -114,7 +160,8 @@ nav {
   .intro__img {
     grid-area: img;
     min-width: 250px;
-
+    position:relative;
+    box-shadow: var(--bs)
   } 
 
   .section__subtitle--intro {
@@ -125,5 +172,48 @@ nav {
     position:relative;
     left: -1.5em;
     width: calc(100% + 1.5em)
+  }
+}
+
+/* services */
+
+.my-services {
+  background: var(--clr-dark);
+  background-image: url('/img/brainbeat-grid-bw.jpeg');
+  background-size:cover;
+  background-blend-mode:multiply;
+  color: var(--clr-light);
+  text-align: center;
+}
+
+.section__title--services {
+  color: var(--clr-accent);
+  position: relative
+}
+
+.section__title--services::after {
+  content: '';
+  display:block;
+  width: 2em;
+  height: 1px;
+  margin: 0.5em auto 1em;
+  background: var(--clr-light);
+  opacity: 0.25;
+}
+
+.service {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+@media (min-width: 800px) {
+  .services {
+    display: flex;
+    max-width:100%;
+    margin: 0 auto;
+  }
+
+  .service + .service {
+    margin-left: 2em;
   }
 }
