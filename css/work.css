@@ -1,1 +1,78 @@
 @import './style.css';
+
+
+.logo__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  grid-gap: 1rem;
+}
+
+.portfolio__item {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+.portfolio__item--link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.portfolio__item--link svg {
+  color: #f9f9f9;
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  top: 6px;
+  border-radius: 50%;
+}
+.github:hover{
+  color: #f9f9f9;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--clr-accent);
+  border-radius: 50%;
+  
+}
+
+.portfolio__item--link:hover, .logo__link:hover
+ {
+  color: var(--clr-accent);
+  transform: scale(1.1);
+  text-shadow: 0 0 10px var(--clr-light);
+}
+
+.portfolio__subtitle {
+  font-size: var(--fs-h3);
+  color: #f9f9f9;
+  margin-bottom: 1rem;
+}
+
+.portfolio__caption {
+  font-size: var(--fs-body);
+  color: #f9f9f9;
+  margin-bottom: 1rem;
+}
+.portfolio__caption span {
+  text-transform: capitalize;
+}
+
+.portfolio img {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  height: auto;
+  box-shadow: var(--bs);
+}
+
+.portfolio video {
+  max-width: 100%;
+  margin: 0 auto;
+  height: auto;
+  box-shadow: 0 0 10px rgba(249, 249, 249, 0.1);
+}
