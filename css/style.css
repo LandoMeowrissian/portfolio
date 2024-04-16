@@ -253,3 +253,20 @@ nav {
   outline: 3px solid var(--clr-accent);
   outline-offset: 3px;
 }
+
+.github {
+  color: #f9f9f9;
+  height: 2rem;
+  width: 2rem;
+  position: relative;
+  top: 6px;
+  border-radius: 50%;
+}
+
+.github:hover{
+  color: #f9f9f9;
+  transform: scale(1.1);
+  box-shadow: 0 0 10px var(--clr-accent);
+  border-radius: 50%;
+  
+}
