@@ -53,6 +53,7 @@ body {
   text-transform: lowercase;
   transition: background 5000ms ease-in-out;
   transition-behavior: smooth;
+  max-width: 1200px;
 }
 
 section {
@@ -78,6 +79,7 @@ h2,
 h3 {
   line-height: 1;
   margin: 0;
+  margin-bottom: 0.5em;
 }
 
 h1 {
@@ -192,15 +194,14 @@ nav {
 .section__title--services::after {
   content: '';
   display: block;
-  width: 2em;
-  height: 1px;
+  width: 4em;
+  height: 2px;
   margin: 0.5em auto 1em;
-  background: var(--clr-light);
+  background: var(--clr-accent);
   opacity: 0.25;
 }
 
 .services {
-  /* display: block; */
   margin-bottom: 4em;
 }
 
@@ -219,9 +220,9 @@ nav {
     margin-right: auto;
   }
 
-  .service {
-    margin-left: auto;
-    margin-right: auto;
+  .service + .service {
+    margin-left: 2em;
+    /* margin-right: auto; */
   }
 }
 
@@ -269,4 +270,48 @@ nav {
   box-shadow: 0 0 10px var(--clr-accent);
   border-radius: 50%;
   
+}
+
+.about-me {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-me__img {
+ 
+  box-shadow: var(--bs);
+}
+
+@media (min-width: 600px) {
+  .about-me {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    grid-template-areas:
+      'title img'
+      'subtitle img'
+      'text img';
+    grid-column-gap: 2em;
+  }
+
+  .section__title--about {
+    grid-area: title;
+   
+  }
+
+  .section__subtitle--about {
+    grid-area: title;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    /* position: relative; */
+    left: -2em;
+    width: calc(100% + 4em);
+    padding-left: 2em;
+    padding-right: calc(200px + 4em); 
+    text-align: center; 
+  }
+
+  .about-me__img {
+    grid-area: img;
+    box-shadow: var(--bs);
+  }
 }
