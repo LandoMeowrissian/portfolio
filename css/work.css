@@ -80,7 +80,7 @@
   box-shadow: 0 0 10px rgba(249, 249, 249, 0.1);
 }
 
-/* @media(min-width: 1280px) {
+@media(max-width: 1280px) {
   .portfolio {
     grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
   }
@@ -88,4 +88,4 @@
   .portfolio__item {
     width: 100%;
   }
-} */
+}
