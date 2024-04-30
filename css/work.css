@@ -9,9 +9,8 @@
 
 
 .portfolio {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
-  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
   grid-gap: 1rem;
 }
 
@@ -20,6 +19,14 @@
   overflow: hidden;
   margin-bottom: 1rem;
 }
+
+/* .portfolio__item.brainbeat.portfolio__img {
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+} */
 .portfolio__item--link {
   text-decoration: none;
   color: inherit;
@@ -80,7 +87,7 @@
   box-shadow: 0 0 10px rgba(249, 249, 249, 0.1);
 }
 
-@media(max-width: 1280px) {
+@media(max-width: 1440px) {
   .portfolio {
     margin: 0 auto;
     grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
