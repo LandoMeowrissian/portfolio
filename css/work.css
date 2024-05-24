@@ -1,7 +1,5 @@
 @import './style.css';
 
-
-
 .logo__link {
   text-decoration: none;
   color: inherit;
@@ -20,13 +18,13 @@
   margin-bottom: 1rem;
 }
 
-/* .portfolio__item.brainbeat.portfolio__img {
+.portfolio__item.brainbeat.portfolio__img-brainbeat {
   background-color: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
-} */
+}
 .portfolio__item--link {
   text-decoration: none;
   color: inherit;
@@ -88,9 +86,14 @@
 }
 
 @media(max-width: 1440px) {
+  
   .portfolio {
-    margin: 0 auto;
-    grid-template-columns: repeat(auto-fill, minmax(1000px, 1fr));
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  
   }
 
   .portfolio__item {
