@@ -1,9 +1,10 @@
+import { Button } from "@/components/ui/button";
 
 function App() {
 
   return (
     <>
-     <h1>my portfolio</h1>
+     <Button variant="default">Click Me</Button>;
     </>
   )
 }
